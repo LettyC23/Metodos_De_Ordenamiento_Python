@@ -78,3 +78,46 @@ print ("Arreglo ordenado")
 ordenamientoConBurbuja1(numeros3)
 print (numeros3)                
         
+    
+    print ("================ ORDENAMIENTO POR SELECCION ====================")
+
+def ordenamientoPorSeleccion(numeros):
+    for recorrido in range (len(numeros) -1, 0, -1):
+        posicionDelMayor =0
+        for recorrido in range (1, recorrido+1):
+            if numeros[recorrido] > numeros[posicionDelMayor]:
+                posicionDelMayor = recorrido
+                
+                
+        aux = numeros[recorrido]
+        numeros [recorrido] = numeros[posicionDelMayor]
+        numeros[posicionDelMayor] = aux
+        
+numeros = [34, 25, 12, 87, 9, 10, 34, 37, 24, 2]
+print ("Arreglo sin ordenar")
+print ( numeros)
+print ("Arreglo ordenado")
+ordenamientoPorSeleccion(numeros)
+print (numeros)
+print ("==================== ORDENAMIENTO POR INSECION ====================")
+
+def ordenamiento_por_insercion(lista):
+    for indice in range (1, len(lista)):
+        valor = lista[indice]
+        i = indice -1
+        while i>=0:
+            if valor < lista [i]:
+                lista [i+1] = lista [i]
+            
+                lista [i] = valor
+                i = i-1
+            else:
+                break
+        
+lista = [34, 25, 12, 87, 9, 10, 34, 37, 24, 2]
+print ("lista sin ordenar")
+print (lista)
+
+print("Lista ordenada")
+ordenamiento_por_insercion(lista)
+print (lista)
