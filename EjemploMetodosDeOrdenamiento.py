@@ -121,3 +121,28 @@ print (lista)
 print("Lista ordenada")
 ordenamiento_por_insercion(lista)
 print (lista)
+
+print ("====================== ordenamiento QuickSort ==============")
+
+def sort (numerosQ):
+    izq = []
+    centro = []
+    der = []
+    if len(numerosQ)>1:
+        pivote = numerosQ[0]
+        for i in numerosQ:
+            if i < pivote:
+                izq.append(i)
+            elif i == pivote:
+                centro.append(i)
+            elif i >pivote:
+                der.append(i)
+        return sort(izq)+ centro+sort(der)
+    else:
+        return numerosQ
+    
+a = list(range( 0, 1000))
+a = Random.sample(a, 1000)
+a = sort(a)
+print(a[0:10])
+print (a[a:9999])
